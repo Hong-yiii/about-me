@@ -15,7 +15,23 @@ export function getPostSlugs() {
 // Get a single post by slug
 export function getPostBySlug(slug: string) {
   const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
+  
+  // Define possible file paths
+  const postPath = join(postsDirectory, `${realSlug}.md`);
+  const mainIntroPath = join(mainIntroductionDirectory, `${realSlug}.md`);
+  
+  let fullPath = "";
+
+  // Check which path exists
+  if (fs.existsSync(postPath)) {
+    fullPath = postPath;
+  } else if (fs.existsSync(mainIntroPath)) {
+    fullPath = mainIntroPath;
+  } else {
+    throw new Error(`Post with slug "${slug}" not found in either directory.`);
+  }
+
+  // Read and parse the file
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
