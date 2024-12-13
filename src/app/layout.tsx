@@ -10,10 +10,10 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `Next.js Blog Example with ${CMS_NAME}`,
-  description: `A statically generated blog example using Next.js and ${CMS_NAME}.`,
+  title: `Moving Fast and Breaking Things`,
+  description: `So if moving fast and breaking things means more experience, what have I experienced?`,
   openGraph: {
-    images: [HOME_OG_IMAGE_URL],
+    images: [HOME_OG_IMAGE_URL], // need to update t
   },
 };
 
