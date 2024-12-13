@@ -8,10 +8,11 @@ const postsDirectory = join(process.cwd(), "_posts");
 const mainIntroductionDirectory = join(process.cwd(), "_mainIntroduction");
 
 // Get slugs (filenames) from _posts directory
-export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
+export function getPostSlugs(): string[] {
+  return fs
+    .readdirSync(postsDirectory)
+    .filter((file) => file.endsWith(".md")); // Only include Markdown files
 }
-
 // Get a single post by slug
 export function getPostBySlug(slug: string) {
   const realSlug = slug.replace(/\.md$/, "");
