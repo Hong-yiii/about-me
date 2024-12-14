@@ -24,11 +24,9 @@ export const NoFOUCScript = (storageKey: string) => {
     const css = document.createElement("style");
     css.textContent = "*,*:after,*:before{transition:none !important;}";
     document.head.appendChild(css);
-
     return () => {
-      /* Force restyle */
-      getComputedStyle(document.body);
-      /* Wait for next tick before removing */
+      // console.log("Restoring transitions...");
+      getComputedStyle(document.body); // Force a reflow
       setTimeout(() => document.head.removeChild(css), 1);
     };
   };
@@ -37,6 +35,7 @@ export const NoFOUCScript = (storageKey: string) => {
 
   /** function to add remove dark class */
   window.updateDOM = () => {
+    // console.log("updateDOM called");
     const restoreTransitions = modifyTransition();
     const mode = localStorage.getItem(storageKey) ?? SYSTEM;
     const systemMode = media.matches ? DARK : LIGHT;
