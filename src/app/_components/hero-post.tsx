@@ -1,3 +1,4 @@
+import React from "react";
 import Avatar from "@/app/_components/avatar";
 import CoverImage from "@/app/_components/cover-image";
 import { type Author } from "@/interfaces/author";
@@ -35,7 +36,14 @@ export function HeroPost({
           </h3>
         </div>
         <div>
-          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+          <p className="text-lg leading-relaxed mb-4">
+            {excerpt.split("\n").map((line, index) => (
+              <React.Fragment key={index}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
+          </p>
         </div>
       </div>
     </section>
