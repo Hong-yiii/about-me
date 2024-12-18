@@ -1,19 +1,30 @@
 ---
-title: "This should be the main introduction"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
+title: "So what do I build?"
+excerpt: "Solutions. To work on Interdiciplinary problems with equally diverse teams is my ideal. Thriving at the intersection of mechanical systems, electronics, software development and design, I always try to approach problems holistically. \n
+Whether it’s designing aerodynamic solutions, coding machine learning algorithms, or crafting intuitive user experiences, I leverage my diverse skills to build efficient, impactful, and scalable solutions."
 coverImage: "/assets/blog/main_introduction/cover.jpg"
-date: "2020-03-16T05:35:07.322Z"
+date: "2024-12-18T05:35:07.322Z"
 author:
-  name: Tim Neutkens
-  picture: "/assets/blog/authors/tim.jpeg"
+  name: Lin Hong Yi
+  picture: "/assets/blog/authors/ProfilePhoto.jpg"
 ogImage:
   url: "/assets/blog/main_introduction/cover.jpg"
----
+--- 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+# Tools I build with
+### SolidWorks
+- Experienced in Designing for 3d printing and manufacturing, Basic CFDs
+### How i communicate with computers
+- Python, CPP, C, JS, SQL, HTML, CSS
+### Frameworks
+- Arduino, ROS, Pytorch, Next.js, Flask
+### 3d printing
+- Slicing, optimising prints. I run my own Neptune 4 pro 3d printer for my projects
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
 
-## Lorem Ipsum
+<a href="/assets/blog/main_introduction/CV.pdf" target="_blank" style="color: #000; background-color: #f0f0f0; padding: 8px; border-radius: 4px; text-decoration: none;">
+  Download my CV
+</a>
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+
+
