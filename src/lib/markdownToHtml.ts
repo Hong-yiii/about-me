@@ -5,11 +5,17 @@ import rehypeRaw from "rehype-raw"; // Allows raw HTML
 import rehypeSanitize from "rehype-sanitize"; // Sanitizes HTML
 import rehypeStringify from "rehype-stringify"; // Converts rehype tree to HTML
 
-export default async function markdownToHtml(markdown: string) {
+const rehypeWrap = require("rehype-wrap"); // Custom plugin for wrapping elements
+
+export default async function markdownToHtml(markdown) {
   const result = await unified()
     .use(remarkParse) // Parse markdown
     .use(remarkRehype, { allowDangerousHtml: true }) // Convert to HTML with raw support
     .use(rehypeRaw) // Enable raw HTML
+    .use(
+      rehypeWrap,
+      { selector: "iframe", wrapper: "div.iframe-container" } // Wrap <iframe> in a container
+    )
     .use(rehypeSanitize, {
       tagNames: [
         "a",
@@ -22,13 +28,14 @@ export default async function markdownToHtml(markdown: string) {
         "ul",
         "ol",
         "li",
-        "img", // Added img support
+        "img",
         "iframe",
       ],
       attributes: {
         a: ["href", "target", "style"],
         iframe: ["src", "width", "height", "frameborder", "allow", "allowfullscreen"],
-        img: ["src", "alt", "title", "width", "height", "style"], // Added img attributes
+        img: ["src", "alt", "title", "width", "height", "style"],
+        div: ["className"],
         "*": ["style"], // Allow inline styles for all tags
       },
     }) // Sanitize the HTML
