@@ -7,7 +7,7 @@ author:
   name: Solidworks, CFD, Aerodynamic Matlab Simulations, 3d Printing
   picture: "/assets/blog/authors/Dart_Team_Photo.jpeg"
 ogImage:
-  url: "/assets/blog/preview/cover.jpg"
+  url: "/assets/blog/robomaster_Dart/Dart_render_Cover.jpeg"
 ---
 
 # **Active Dart System: A Multidisciplinary Engineering Endeavor**
@@ -76,6 +76,17 @@ Extensive testing validated the system’s performance, confirming its alignment
 - **Stability**: Aerodynamic and material optimizations significantly improved flight stability.
 - **Automation**: Sensors and motors enhanced reloading and aiming processes, reducing manual intervention.
 - **Target Tracking**: The vision system effectively followed green-colored targets in real-time, aiding in precision aiming.
+
+---
+
+## Watch!
+
+<div style="display: flex; justify-content: center; align-items: center; min-height: 30vh;">
+  <video controls width="60%">
+    <source src="/assets/blog/robomaster_Dart/Test_Launch.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
 ---
 # Final Paper written about the Development of the Prototype
