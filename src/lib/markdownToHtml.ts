@@ -7,7 +7,7 @@ import rehypeStringify from "rehype-stringify"; // Converts rehype tree to HTML
 
 const rehypeWrap = require("rehype-wrap"); // Custom plugin for wrapping elements
 
-export default async function markdownToHtml(markdown) {
+export default async function markdownToHtml(markdown: string): Promise<string> {
   const result = await unified()
     .use(remarkParse) // Parse markdown
     .use(remarkRehype, { allowDangerousHtml: true }) // Convert to HTML with raw support
