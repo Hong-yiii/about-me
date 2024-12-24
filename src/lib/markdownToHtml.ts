@@ -42,6 +42,8 @@ export default async function markdownToHtml(markdown: string): Promise<string> 
         "th",
         "td",
         "blockquote",
+        "video", // Add video tag
+        "source", // Add source tag
       ],
       attributes: {
         a: ["href", "target", "style"],
@@ -52,8 +54,10 @@ export default async function markdownToHtml(markdown: string): Promise<string> 
         div: ["className"],
         th: ["colspan", "rowspan", "className"],
         td: ["colspan", "rowspan", "className"],
+        video: ["controls", "width", "height", "autoplay", "loop", "muted", "poster"], // Allow video attributes
+        source: ["src", "type"], // Allow source attributes
         "*": ["style"], // Allow inline styles for all tags
-      },
+      },    
     }) // Sanitize the HTML
     .use(rehypeStringify) // Convert back to HTML
     .process(markdown);
