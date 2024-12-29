@@ -52,8 +52,9 @@ export function getAllPosts(): Post[] {
     const orderFile = fs.readFileSync(orderFilePath, "utf8");
     order = JSON.parse(orderFile).order;
   } catch (error) {
+    const errorMessage = (error as Error).message || "Unknown error occurred.";
     console.warn(
-      `Error reading or parsing postOrder.json: ${error.message}. Defaulting to no specific order.`
+      `Error reading or parsing postOrder.json: ${errorMessage}. Defaulting to no specific order.`
     );
   }
 
@@ -72,6 +73,7 @@ export function getAllPosts(): Post[] {
 
   return orderedPosts;
 }
+
 
 // Function to retrieve the main introduction post
 export function getMainIntroduction(): Post {
