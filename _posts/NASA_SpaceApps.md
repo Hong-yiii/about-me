@@ -78,6 +78,11 @@ Given any location, we can then obtain the optimal soy bean group (1 through 4) 
 ## **Explore the Code**
 
 Dive into the technical implementation and explore the project repository: 
-[GitHub Repository: MR_BEAN](https://github.com/Hong-yiii/MR_BEAN)
+<a href="https://github.com/Hong-yiii/MR_BEAN" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   style="color: #0066cc; text-decoration: underline; font-family: Arial, sans-serif; font-size: 16px; cursor: pointer;">
+   GitHub Repository: MR_BEAN
+</a>
 
 ---
