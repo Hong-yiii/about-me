@@ -4,12 +4,14 @@ import remarkRehype from "remark-rehype"; // Converts remark tree to rehype tree
 import rehypeRaw from "rehype-raw"; // Allows raw HTML
 import rehypeSanitize from "rehype-sanitize"; // Sanitizes HTML
 import rehypeStringify from "rehype-stringify"; // Converts rehype tree to HTML
+import remarkGfm from "remark-gfm"; // Adds support for GitHub-Flavored Markdown
 
 const rehypeWrap = require("rehype-wrap"); // Custom plugin for wrapping elements
 
 export default async function markdownToHtml(markdown: string): Promise<string> {
   const result = await unified()
     .use(remarkParse) // Parse markdown
+    .use(remarkGfm) // Enable GitHub-Flavored Markdown (including tables)
     .use(remarkRehype, { allowDangerousHtml: true }) // Convert to HTML with raw support
     .use(rehypeRaw) // Enable raw HTML
     .use(
