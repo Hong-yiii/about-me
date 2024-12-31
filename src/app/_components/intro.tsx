@@ -9,7 +9,7 @@ export function Intro() {
       <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
         Let's chat! Drop me a text!{" "}
         <a
-          href="mailto:hongyilin.mail@gmail.com"
+          href="mailto:hong_yi@u.nus.edu"
           className="underline hover:text-blue-600 duration-200 transition-colors"
         >
         <div></div>
