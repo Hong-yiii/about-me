@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: `Moving Fast and Breaking Things`,
   description: `So if moving fast and breaking things means more experience, what have I experienced?`,
   openGraph: {
-    images: [HOME_OG_IMAGE_URL], // need to update t
+    images: ["/assets/blog/main_introduction/HongYi.jpg"], // need to update t
   },
 };
 
