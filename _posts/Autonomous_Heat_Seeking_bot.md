@@ -11,7 +11,7 @@ ogImage:
   url: "/assets/blog/Autonomous_Heat_Seeking_bot/coverpic.png"
 ---
 
-# **Autonomous Heat-Seeking Bot: Thermal Target Engagement under Constraints**
+# **Engineering a Reliable System**
 
 This project documents the design, development, and deployment of an autonomous mobile robot capable of exploring an unknown indoor maze, identifying heat sources, and launching a projectile at them using a dual-flywheel mechanism.
 
@@ -26,13 +26,13 @@ Inspired by real-world thermal response scenarios (disaster rescue), the bot was
       width="100%" 
       height="480" 
       style="border:1px solid #cccccc;" 
-      src="https://3dviewer.net/embed.html#model=https://raw.githubusercontent.com/Hong-yiii/CDE2310_System_Design/main/CAD/turtlebot%20with%20launcher.STL$camera=93.42291,-333.17682,179.88174,93.73459,187.34505,-94.63919,0.00000,1.00000,0.00000,45.00000$projectionmode=perspective$envsettings=fishermans_bastion,off$backgroundcolor=255,255,255,255$defaultcolor=200,200,200$defaultlinecolor=100,100,100$edgesettings=off,0,0,0,1">
+      src="https://3dviewer.net/embed.html#model=https://raw.githubusercontent.com/Hong-yiii/about-me/main/public/assets/blog/Autonomous_Heat_Seeking_bot/turtlebot%20with%20launcher.STL$camera=93.42291,-333.17682,179.88174,93.73459,187.34505,-94.63919,0.00000,1.00000,0.00000,45.00000$projectionmode=perspective$envsettings=fishermans_bastion,off$backgroundcolor=255,255,255,255$defaultcolor=200,200,200$defaultlinecolor=100,100,100$edgesettings=off,0,0,0,1">
   </iframe>
 </div>
 
 ### Final navitgation run at 4x speed
 <div style="display: flex; justify-content: center; margin: 2em 0;">
-  <video width="640" height="360" controls style="border: 2px solid #ddd; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <video width="640" height="360" controls autoplay muted style="border: 2px solid #ddd; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
     <source src="/assets/blog/Autonomous_Heat_Seeking_bot/Final_run.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -56,9 +56,9 @@ Inspired by real-world thermal response scenarios (disaster rescue), the bot was
 
 ---
 
-## 📷 **System Overview**
+## **System Overview**
 
-![System Diagram](/assets/images/general_system/System_Diagram_2310.drawio.png)
+![System Diagram](/assets/blog/Autonomous_Heat_Seeking_bot/System_Diagram_2310.drawio.png)
 
 Each subsystem is orchestrated via a centralized `GlobalController` node:
 
@@ -109,9 +109,8 @@ Each subsystem is orchestrated via a centralized `GlobalController` node:
 
 ---
 
-## 🧠 **What I Learned**
+## **What I Learned**
 
+- The Art of building complex systems - With more moving parts, rate of failure grows exponentially
 - Multi-threaded execution in ROS2
-- Sensor fusion with LIDAR and thermal IR
-- Mechanical debugging under tight tolerances
-- Designing for power and compute limits (Raspberry Pi 4B)
+- LIDAR and thermal IR
