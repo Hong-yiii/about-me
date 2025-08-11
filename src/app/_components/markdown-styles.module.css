@@ -11,7 +11,25 @@
 
 .markdown b,
 .markdown strong {
-  @apply font-bold text-gray-900 dark:text-gray-100;
+  @apply font-bold;
+}
+
+/* Links */
+.markdown a {
+  @apply text-blue-600 dark:text-blue-400 underline underline-offset-2 decoration-2;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.markdown a:hover {
+  @apply text-blue-700 dark:text-blue-300;
+}
+
+.markdown a:focus {
+  @apply outline-none ring-2 ring-blue-400 dark:ring-blue-300 rounded-sm;
+}
+
+.markdown a:visited {
+  @apply text-purple-700 dark:text-purple-400;
 }
 
 .markdown ul {

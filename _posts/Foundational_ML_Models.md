@@ -35,7 +35,7 @@ The course began with fundamental machine learning principles and quickly advanc
 The pinnacle of the course was the implementation of a basic transformer model, inspired by the revolutionary *Attention Is All You Need* paper. This section involved:
 
 #### Basic Transformer module
-![Transformer Visualization](/assets/blog/Foundational_ML_Models/Transfomer_Model.jpg)
+![Transformer Visualization](/assets/blog/Foundational_ML_Models/basic_transformer_module.png)
 
 
 - **Self-Attention Mechanisms**: Understanding how transformers focus on different parts of an input sequence to encode contextual relationships efficiently.
