@@ -1,6 +1,6 @@
 ---
 title: "Building Agentic AI systems"
-excerpt: "Spent a summer fighting AI frameworks, pipelines and endless documentation, and as unpredictable and frustrating they can be, engineering a reliable system from the ground up was a fun experience, so... here's a concoction of my opinions and learning from building agentic orchestration systems."
+excerpt: "Spent a summer fighting AI frameworks, pipelines and endless documentation. As unpredictable and frustrating they can be, engineering a reliable system from the ground up was a fun experience, so... here's a concoction of my thoughts from building an agentic orchestration system."
 coverImage: "/assets/blog/Building_Agentic_AI/AgenticLoop.png"
 date: "2025-08-12T05:35:07.322Z"
 author:
