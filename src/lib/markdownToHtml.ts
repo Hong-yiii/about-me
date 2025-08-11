@@ -46,6 +46,11 @@ export default async function markdownToHtml(markdown: string): Promise<string> 
         "blockquote",
         "video", // Add video tag
         "source", // Add source tag
+        // Allow formatting tags
+        "strong",
+        "b",
+        "em",
+        "i",
       ],
       attributes: {
         a: ["href", "target", "style"],
