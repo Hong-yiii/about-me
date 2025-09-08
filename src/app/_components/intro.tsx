@@ -15,7 +15,7 @@ export function Intro() {
         </a>{" "}
         <div></div>
         <a
-          href="https://www.linkedin.com/in/hong-yi-lin-793b8b23b/"
+          href="https://www.linkedin.com/in/hong-yiii"
           className="underline hover:text-blue-600 duration-200 transition-colors"
         >
           LinkedIn
