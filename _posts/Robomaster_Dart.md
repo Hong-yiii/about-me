@@ -1,6 +1,6 @@
 ---
 title: "DJI RoboMaster DART team"
-excerpt: "Collaborated with NUS Calibur Robotics under Undergrad Research Experience to develop a high accuracy projectile launching robot to base future iterations on."
+excerpt: "Collaborated with NUS Calibur Robotics to develop a high accuracy projectile launching robot to iterations on."
 coverImage: "/assets/blog/robomaster_Dart/Dart_render_Cover.jpeg"
 date: "2024-08-01T05:35:07.322Z"
 author:
