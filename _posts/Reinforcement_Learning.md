@@ -1,11 +1,11 @@
 ---
 title: "A Reinforcement Learning Journey: From First Principles to Robotic Control"
-excerpt: "A technical documentation of a self-taught progression through reinforcement learning, breaking down the key insights from foundational papers on policy gradients, actor-critic methods, and their application to complex control tasks."
-coverImage: "/assets/blog/rl_journey/cover.png"
+excerpt: "Self-taught progression through reinforcement learning, breaking down the key insights from foundational papers on policy gradients, actor-critic methods, and their application to complex control tasks."
+coverImage: "/assets/blog/Reinforcement_Learning/Reinforcement-Learning.png"
 date: "2025-11-18T05:35:07.322Z"
 author:
   name: Hong Yi Lin
-  picture: "/assets/blog/authors/hongyi.png"
+  picture: "/assets/blog/authors/ProfilePhoto.jpg"
 ogImage:
   url: "/assets/blog/rl_journey/cover.png"
 ---
