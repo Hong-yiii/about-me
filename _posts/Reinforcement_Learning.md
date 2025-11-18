@@ -16,6 +16,8 @@ How can we teach a machine to perform a complex task, like riding a bike or mast
 
 This learning process presents a unique and difficult challenge: the trade-off between exploration and exploitation. The agent must exploit what it already knows to gain rewards, but it must also explore new, untried actions to discover potentially better strategies. Furthermore, the consequences of an action might not be apparent until many steps later, a problem known as credit assignment.
 
+![RL Loop](/assets/blog/Reinforcement_Learning/RL_loop.png)
+
 This article documents my self-directed study of this field, structured as a series of key learnings from foundational papers and algorithms. My journey revealed a clear progression of ideas:
 
 - It began with **formalizing the problem** using the language of mathematics to define states, actions, and rewards.
@@ -172,32 +174,68 @@ graph TD
 3.  **Target Policy Smoothing:** Small amounts of noise are added to the target action during critic updates. This creates a smoother Q-value landscape and makes the policy more robust.
 
 The practical impact is profound. The videos below show a cheetah agent's progress, illustrating the difference between an unstable early algorithm and a robust, well-trained policy.
-
+**Early algo**
 <video controls>
   <source src="/assets/blog/Reinforcement_Learning/cheetah_epoch1.mp4" type="video/mp4">
 </video>
+
+**Trained policy**
 <video controls>
   <source src="/assets/blog/Reinforcement_Learning/cheetah_epoch3.mp4" type="video/mp4">
 </video>
 
 **Takeaway:** The stability of modern actor-critic algorithms comes from carefully identifying and addressing specific sources of error, such as overestimation bias in the critic.
 
-## Phase 4: The Shift to Systems Thinking in Robotics
+## Phase 4: From Algorithms to a Generalizable Drone Racing System
 
-The final phase of my journey was applying these algorithms to robotics simulation in **MuJoCo**. This is where abstract theory collides with the messy reality of physical systems. The focus shifted from pure algorithmic improvements to a more holistic, systems-level approach.
+A real-world embodiment of these ideas is **Swift**, the champion-level drone racing system developed at the Robotics and Perception Group, University of Zurich (Kaufmann et al., 2024). Trained end-to-end with PPO in simulation and then transferred to real FPV tracks, Swift pairs a carefully engineered perception and state-estimation stack with a lightweight neural policy that can reliably beat human world champions.
 
-The key challenges were no longer just about optimization, but about engineering:
--   **Reward Shaping:** In robotics, rewards are often sparse (e.g., a single +1 for task completion). This is insufficient for learning. I had to engineer dense reward functions that guided the agent towards the goal without creating unintended, "hacked" behaviors.
--   **The Sim-to-Real Gap:** A policy trained in a perfect simulation will often fail in the real world due to subtle differences in friction, mass, and sensor noise. This is a central problem in modern robotics.
--   **System Integration:** The RL algorithm is just one part of a larger system that includes the simulator, the robot model (MJCF), sensors, and actuators. Success requires a holistic view.
+**Swift system developed at Robotics and Perception Group, University of Zurich**
+![Swift System](/assets/blog/Reinforcement_Learning/SwiftSystem.png)
 
-This final phase was a crucial lesson in engineering pragmatism. It demonstrated that while a deep understanding of the theory is essential, building functional autonomous agents is equally a challenge of system design and careful implementation.
+Swift sits within a broader ecosystem of work on agile flight and autonomous racing—comparing optimal control to RL, leveraging differentiable physics for vision-based flight, and learning quadrotor control directly from visual features (Brunnbauer et al., 2021; Gehrig et al., 2021; Kaufmann et al., 2019). Together, these systems make it clear that success is not just about choosing the right RL algorithm, but about composing perception, dynamics, and control into a coherent architecture.
+
+My current direction builds directly on this line of work: **Transformer-augmented reinforcement learning for drone racing**. Here, all the ideas from Phases 1–3—policy gradients, advantage estimation, trust-region style updates (PPO), and stability techniques from TD3—are no longer abstract tools, but design constraints for a full end-to-end system.
+
+Rather than treating RL as a monolithic "black box," the system is deliberately **modular**. A **Transformer-based vision encoder** learns a latent representation of the track and gate geometry, while a **Transformer PPO policy** consumes this representation together with state estimates to output low-level thrust and body-rate commands at real-time frequencies. The classic questions of RL (how to define the return, how large an update to take, how to manage partial observability) now show up as concrete engineering choices about reward shaping, temporal context length, and the structure of the perception–control interface.
+
+The challenges are therefore both algorithmic and systemic:
+-   **Reward Shaping for Racing:** The reward must balance raw lap time with stability, gate alignment, and control smoothness, while avoiding degenerate shortcuts that "game" the track.
+-   **Generalization and Sim-to-Real:** Policies are trained with heavy domain randomization and residual modeling so that a controller learned in simulation can transfer to new tracks and real hardware without catastrophic failure.
+-   **Latency and Integration:** Every component—vision backbone, policy network, and sensor fusion stack—must fit within a tight real-time budget on embedded compute, forcing architectural decisions that respect both theory and hardware.
+
+Phase 4 is thus less about inventing a new algorithm and more about **composing everything learned so far into a coherent, deployable system**—one that can race competitively, generalize beyond a single environment, and serve as a template for future embodied RL projects.
 
 ```mermaid
 graph TD
-    Sim[Simulation Environment] --> Train(Train Policy);
-    Train --> Policy;
-    Policy --> Deploy(Deploy on Real Robot);
-    Deploy -- Performance --> RealWorld((Real World));
-    RealWorld -- Reality Gap --> Sim;
+    Sim[Simulated Drone Racing Tracks] --> Vision[Transformer Vision Encoder];
+    Vision --> Policy[Transformer PPO Policy];
+    Policy --> Drone[Real Quadrotor];
+    Drone -- Telemetry & Video --> Data[Real-World Data];
+    Data -- Residual Modeling & Fine-Tuning --> Sim;
 ```
+
+
+### Core Papers
+
+*   **DDPG:** Lillicrap, T. P., et al. (2015). Continuous Control with Deep Reinforcement Learning. *International Conference on Learning Representations (ICLR)*.
+*   **GAE:** Schulman, J., Moritz, P., Levine, S., Jordan, M. I., & Abbeel, P. (2015). High-Dimensional Continuous Control Using Generalized Advantage Estimation. *International Conference on Learning Representations (ICLR)*.
+*   **Policy Gradients:** Sutton, R. S., McAllester, D. A., Singh, S. P., & Mansour, Y. (2000). Policy Gradient Methods for Reinforcement Learning with Function Approximation. *Advances in Neural Information Processing Systems*, 13.
+*   **PPO:** Schulman, J., Wolski, F., Dhariwal, P., Radford, A., & Klimov, O. (2017). Proximal Policy Optimization Algorithms. *arXiv preprint arXiv:1707.06347*.
+*   **TD3:** Fujimoto, S., van Hoof, H., & Meger, D. (2018). Addressing Function Approximation Error in Actor-Critic Methods. *International Conference on Machine Learning (ICML)*.
+*   **TRPO:** Schulman, J., Levine, S., Abbeel, P., Jordan, M., & Moritz, P. (2015). Trust Region Policy Optimization. *International Conference on Machine Learning (ICML)*.
+
+### Additional Influential Papers & Resources
+
+*   Duan, Y., Chen, X., Houthooft, R., Schulman, J., & Abbeel, P. (2016). Benchmarking Deep Reinforcement Learning for Continuous Control. *International Conference on Machine Learning (ICML)*.
+*   Kaufmann, E., et al. (2024). Champion-Level Drone Racing Using Deep Reinforcement Learning. *Nature*.
+*   OpenAI. (n.d.). *Spinning Up in Deep RL*. Retrieved from [https://spinningup.openai.com/](https://spinningup.openai.com/)
+*   Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction*. MIT Press.
+*   Zhou, Y., et al. (2024). Genesis: A General-purpose, Language-driven, Embodied AI System. *arXiv preprint arXiv:2401.11904*.
+
+### Phase 4 papers
+*   Brunnbauer, A., et al. (2021). Reaching the Limit in Autonomous Racing: Optimal Control versus Reinforcement Learning. *IEEE Robotics and Automation Letters (RA-L)*.
+*   Gehrig, M., et al. (2021). Back to Newton’s Laws: Learning Vision-based Agile Flight via Differentiable Physics. *Conference on Robot Learning (CoRL)*.
+*   Lu, C., et al. (2022). Transformers in Reinforcement Learning: A Survey. *arXiv preprint arXiv:2206.13436*.
+*   Laskin, M., et al. (2020). Stabilizing Deep Q-Learning with ConvNets and Vision Transformers under Data Augmentation. *arXiv preprint arXiv:2011.00067*.
+*   Kaufmann, E., et al. (2019). Learning Quadrotor Control from Visual Features Using Differentiable Simulation. *Robotics: Science and Systems (RSS)*.
