@@ -1,5 +1,5 @@
 ---
-title: "A Reinforcement Learning Journey: From First Principles to Robotic Control"
+title: "Reinforcement Learning from First Principles to Robotic Control"
 excerpt: "Self-taught progression through reinforcement learning, breaking down the key insights from foundational papers on policy gradients, actor-critic methods, and their application to complex control tasks."
 coverImage: "/assets/blog/Reinforcement_Learning/Reinforcement-Learning.png"
 date: "2025-11-18T05:35:07.322Z"
