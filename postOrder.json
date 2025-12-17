@@ -1,4 +1,12 @@
 {
-    "order": ["Building_Agentic_AI", "Reinforcement_Learning", "Autonomous_Heat_Seeking_bot","Robomaster_Dart","Foundational_ML_Models", "NASA_SpaceApps"]
-  }
+  "order": [
+    "Building_Agentic_AI",
+    "UWB_Localization_Mesh",
+    "Reinforcement_Learning",
+    "Autonomous_Heat_Seeking_bot",
+    "Robomaster_Dart",
+    "Foundational_ML_Models",
+    "NASA_SpaceApps"
+  ]
+}
   
