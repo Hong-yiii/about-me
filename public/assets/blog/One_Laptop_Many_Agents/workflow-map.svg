@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 740" role="img" aria-labelledby="title desc">
+  <title id="title">One desk, three places to work</title>
+  <desc id="desc">Hong Yi steers work from cmux on the Mac. Lightweight jobs can run locally. GPU-required work goes to the GPU homelab. Proxmox hosts Linux development VMs for agents needing separate environments. These are workload choices, not an automatic scheduler or a claim that every VM has a GPU. Worktrees separate concurrent code edits; VMs separate operating-system environments.</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#d7e5da" stroke-width="1.5"/></marker></defs>
+  <rect width="960" height="740" rx="24" fill="#203a34"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="40" y="49" font-size="15" letter-spacing="2" fill="#c7d9ce">01 / WHERE I PUT THE WORK</text>
+    <text x="40" y="102" font-size="38" font-weight="700" fill="#fffdf6">One desk. Three places to work.</text>
+    <text x="40" y="146" font-size="23" fill="#d7e5da">I choose the machine. cmux keeps the work within reach.</text>
+    <rect x="40" y="252" width="275" height="301" rx="18" fill="#f5f1e7"/>
+    <text x="66" y="300" font-size="29" font-weight="700" fill="#203a34">My Mac + cmux</text>
+    <text x="66" y="342" font-size="22" fill="#52625c">Sessions · review</text>
+    <path d="M66 368H289" stroke="#c7cdbf"/>
+    <text x="66" y="408" font-size="23" font-weight="700" fill="#203a34">Local work</text>
+    <text x="66" y="444" font-size="21" fill="#52625c">Keep simple tasks here.</text>
+    <text x="66" y="510" font-size="21" fill="#52625c">SSH over Tailscale →</text>
+    <g fill="none" stroke="#d7e5da" stroke-width="2.5" marker-end="url(#arrow)">
+      <path d="M315 403H370V284H422"/>
+      <path d="M370 403V499H422"/>
+    </g>
+    <rect x="434" y="203" width="486" height="162" rx="18" fill="#e9ddc4"/>
+    <text x="462" y="248" font-size="28" font-weight="700" fill="#203a34">GPU homelab</text>
+    <text x="462" y="289" font-size="23" fill="#4f594e">Jobs that need the GPU go here.</text>
+    <text x="462" y="330" font-size="20" fill="#4f594e">Remote compute, familiar interface.</text>
+    <rect x="434" y="397" width="486" height="260" rx="18" fill="#2e4a42" stroke="#748d7c"/>
+    <text x="462" y="443" font-size="28" font-weight="700" fill="#fffdf6">Proxmox</text>
+    <text x="462" y="480" font-size="21" fill="#d7e5da">Independent Linux environments</text>
+    <rect x="460" y="505" width="205" height="120" rx="12" fill="#d6e7df"/>
+    <text x="478" y="542" font-size="24" font-weight="700" fill="#203a34">Dev VM</text>
+    <text x="478" y="574" font-size="20" fill="#354c42">Pi + worktrees</text>
+    <text x="478" y="603" font-size="18" fill="#354c42">Separate code edits</text>
+    <rect x="683" y="505" width="211" height="120" rx="12" fill="none" stroke="#c7d9ce" stroke-dasharray="7 5"/>
+    <text x="701" y="542" font-size="24" font-weight="700" fill="#fffdf6">Another VM</text>
+    <text x="701" y="574" font-size="20" fill="#d7e5da">When needed</text>
+    <text x="701" y="603" font-size="18" fill="#d7e5da">Separate environment</text>
+    <text x="40" y="707" font-size="20" fill="#d7e5da">More agents does not mean every agent needs a VM—or a GPU.</text>
+  </g>
+</svg>

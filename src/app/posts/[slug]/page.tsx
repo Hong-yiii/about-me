@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 import markdownToHtml from "@/lib/markdownToHtml";
@@ -53,8 +53,10 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
 
   return {
     title,
+    description: post.excerpt,
     openGraph: {
       title,
+      description: post.excerpt,
       images: [post.ogImage.url],
     },
   };

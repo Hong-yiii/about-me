@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Reuse the workflow, not the private context</title>
+  <desc id="desc">Intended ownership boundaries: reviewed workflow patterns can be reused across Framed, personal, and defense-tech work, while accounts, conversations, and company knowledge should stay with their respective owners. Framed and personal have documented deployments; the defense-tech dedicated-VM foundation is a build specification, not a verified deployment. The records still contain unresolved account-ownership drift; this is not proof of complete security isolation.</desc>
+  <rect width="900" height="620" rx="24" fill="#f0eee7"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#222b29">
+    <text x="40" y="48" font-size="15" letter-spacing="2" fill="#52625c">05 / SAME HABITS, DIFFERENT WORK</text>
+    <text x="40" y="98" font-size="34" font-weight="700">Share the recipe.</text>
+    <text x="40" y="141" font-size="34" font-weight="700">Keep the ingredients with their owner.</text>
+    <rect x="80" y="181" width="740" height="70" rx="14" fill="#203a34"/>
+    <text x="450" y="224" text-anchor="middle" font-size="25" fill="#fffdf6">Reviewed code, templates, and workflow patterns</text>
+    <path d="M450 251V275H175V298M450 275V298M450 275H725V298" fill="none" stroke="#74746c" stroke-width="2"/>
+    <rect x="50" y="300" width="250" height="224" rx="14" fill="#d6e7df"/>
+    <rect x="325" y="300" width="250" height="224" rx="14" fill="#e9ddc4"/>
+    <rect x="600" y="300" width="250" height="224" rx="14" fill="#fffdf6" stroke="#74746c" stroke-width="2" stroke-dasharray="7 5"/>
+    <g text-anchor="middle">
+      <g font-size="27" font-weight="700"><text x="175" y="347">Framed</text><text x="450" y="347">Personal</text><text x="725" y="347">Defense tech</text></g>
+      <g font-size="19" fill="#52625c"><text x="175" y="380">Documented deployment</text><text x="450" y="380">Documented deployment</text><text x="725" y="380">Specified foundation</text></g>
+      <g font-size="22"><text x="175" y="429">Company context</text><text x="450" y="429">Personal context</text><text x="725" y="429">Dedicated-VM design</text></g>
+      <g font-size="20" fill="#52625c"><text x="175" y="463">Company accounts</text><text x="450" y="463">Personal accounts</text><text x="725" y="463">Separate identity</text><text x="175" y="494">Company knowledge</text><text x="450" y="494">Personal knowledge</text><text x="725" y="494">Not yet verified here</text></g>
+    </g>
+    <text x="450" y="569" text-anchor="middle" font-size="20" fill="#52625c">Intended ownership; account drift remains to be resolved.</text>
+  </g>
+</svg>
